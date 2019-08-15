@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel" *ngIf="userData">
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Name</th>
+              <th>Comapany</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Posts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of userData">
+              <td>{{ data.username }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.company.name }}</td>
+              <td>{{ data.email }}</td>
+              <td>{{ data.phone }}</td>
+              <td><a [routerLink]="['/posts', data.id]" class="btn btn-primary">Posts</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
